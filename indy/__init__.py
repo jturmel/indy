@@ -128,6 +128,10 @@ def vim_open(path):
 
 
 def main():
+    global ALL_FILES
+    global WINS
+    global CHAR_COMBOS
+
     rootdir = os.getcwd()
     ALL_FILES = []
     for root, dirs, files in os.walk(rootdir):
@@ -142,7 +146,6 @@ def main():
 
             full_path = full_path.replace(rootdir, '')
             ALL_FILES.append(full_path)
-    WINS = {}
 
     screen = curses.initscr()
     my, mx = screen.getmaxyx()
